@@ -1,12 +1,12 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import ReactFlow, { Background, Controls } from 'reactflow';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-hello-world',
+  templateUrl: './hello-world.component.html',
+  styleUrls: ['./hello-world.component.scss'],
 })
-export class AppComponent {
+export class HelloWorldComponent implements OnInit {
   public Flow: any = ReactFlow;
 
   public props: any = {
@@ -31,17 +31,10 @@ export class AppComponent {
 
   public constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
-  onNgInit() {
+  ngOnInit(): void {
     // nested components
     this.Flow.Background = Background;
     this.Flow.Controls = Controls;
-
-    this.Flow.defaultStyles = {
-      background: {
-        fill: '#aaa',
-        stroke: '#555',
-      },
-    };
 
     this.changeDetectorRef.detectChanges();
   }
