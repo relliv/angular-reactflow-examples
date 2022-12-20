@@ -9,11 +9,23 @@ import { createRoot } from 'react-dom/client';
 export class ReactComponentDirective<Comp extends ElementType> {
   @Input() reactComponent: Comp;
   @Input() props: ComponentProps<Comp>;
+  @Input() children: any;
 
   private root = createRoot(inject(ElementRef).nativeElement);
 
   ngOnChanges() {
-    this.root.render(createElement(this.reactComponent, this.props));
+    this.root.render(
+      createElement(
+        this.reactComponent,
+        this.props,
+        this.children.map((child: any) =>
+          createElement(child as React.FC<any>, {
+            key: child.name,
+            ...child.props,
+          })
+        )
+      )
+    );
   }
 
   ngOnDestroy() {

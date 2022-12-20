@@ -1,5 +1,13 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
 import ReactFlow, { Background, Controls } from 'reactflow';
+import ReactFlowHelloWorld from './ReactFlowHelloWorld';
 
 @Component({
   selector: 'app-hello-world',
@@ -7,7 +15,14 @@ import ReactFlow, { Background, Controls } from 'reactflow';
   styleUrls: ['./hello-world.component.scss'],
 })
 export class HelloWorldComponent implements OnInit {
-  public Flow: any = ReactFlow;
+  public ReactFlow: any = ReactFlow;
+  public Background: any = Background;
+  public Controls: any = Controls;
+
+  public rootId = 'root';
+  private rootElement: ReactDOM.Root | null = null;
+
+  private hasViewLoaded = false;
 
   public props: any = {
     edges: [
@@ -27,15 +42,46 @@ export class HelloWorldComponent implements OnInit {
         position: { x: 100, y: 100 },
       },
     ],
+
+    children: [Background],
   };
 
   public constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    // nested components
-    this.Flow.Background = Background;
-    this.Flow.Controls = Controls;
-
     this.changeDetectorRef.detectChanges();
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.hasViewLoaded) {
+      this.renderReactApp();
+    }
+  }
+
+  ngAfterViewInit() {
+    if (!this.hasViewLoaded) {
+      this.hasViewLoaded = true;
+
+      this.renderReactApp();
+    }
+  }
+
+  ngOnDestroy() {}
+
+  private renderReactApp() {
+    this.rootElement = ReactDOM.createRoot(
+      document.getElementById('root') as HTMLElement
+    );
+
+    this.rootElement.render(
+      React.createElement(ReactFlowHelloWorld as React.FC<any>)
+    );
+
+    // ReactDOM.render is no longer supported in React 18
+    // ReactDOM.render(
+    //   React.createElement(ReactFlowHelloWorld),
+    //   document.getElementById(this.rootId)
+    // );
+  }
 }
+
