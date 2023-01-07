@@ -7,7 +7,7 @@ import {
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import ReactFlow, { Background, Controls } from 'reactflow';
-import ReactFlowHelloWorld from './ReactFlowHelloWorld';
+import ReactFlowHelloWorld from './_react/ReactFlowHelloWorld';
 
 @Component({
   selector: 'app-hello-world',
@@ -84,4 +84,3 @@ export class HelloWorldComponent implements OnInit {
     // );
   }
 }
-
