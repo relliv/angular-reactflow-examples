@@ -30,13 +30,13 @@ const ReactFlowHelloWorld: React.FC<any> = ({}) => {
 
   return (
     <React.StrictMode>
-    <div style={{ height: '100%' }}>
-      <ReactFlow nodes={options.nodes} edges={options.edges}>
-        <Background />
-        <Controls />
-      </ReactFlow>
+      <div style={{ height: '100%' }}>
+        <ReactFlow nodes={options.nodes} edges={options.edges}>
+          <Background />
+          <Controls />
+        </ReactFlow>
       </div>
-      </React.StrictMode>
+    </React.StrictMode>
   );
 };
 

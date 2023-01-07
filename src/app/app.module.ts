@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ReactComponentDirective } from './react-component.directive';
+import { FeatureOverflowComponent } from './feature-overflow/feature-overflow.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent],
+  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
