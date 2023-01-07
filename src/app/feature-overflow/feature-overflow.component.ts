@@ -1,18 +1,8 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import ReactFlow, { Background, Controls } from 'reactflow';
-import ReactFlowFeatureOverview from './reactComponents/ReactFlowFeatureOverview';
-import {
-  nodes as initialNodes,
-  edges as initialEdges,
-} from './reactComponents/CustomNode';
-import CustomNode from './reactComponents/CustomNode';
+import ReactFlowFeatureOverview from './_react/ReactFlowFeatureOverview';
 
 @Component({
   selector: 'app-feature-overflow',
@@ -49,11 +39,5 @@ export class FeatureOverflowComponent implements OnInit {
     this.rootElement.render(
       React.createElement(ReactFlowFeatureOverview as React.FC<any>)
     );
-
-    // ReactDOM.render is no longer supported in React 18
-    // ReactDOM.render(
-    //   React.createElement(ReactFlowHelloWorld),
-    //   document.getElementById(this.rootId)
-    // );
   }
 }
