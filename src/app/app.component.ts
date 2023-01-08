@@ -23,6 +23,10 @@ export class AppComponent {
       label: 'Proximity Connect',
       route: '/proximity-connect',
     },
+    {
+      label: 'Drag Handle',
+      route: '/drag-handle',
+    },
   ];
 
   public constructor() {}

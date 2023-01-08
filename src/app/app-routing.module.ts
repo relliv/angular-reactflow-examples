@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeatureOverflowComponent } from './feature-overflow/feature-overflow.component';
 import { ProximityConnectComponent } from './proximity-connect/proximity-connect.component';
 import { FloatingEdgesComponent } from './floating-edges/floating-edges.component';
+import { DragHandleComponent } from './drag-handle/drag-handle.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'floating-edges',
     component: FloatingEdgesComponent,
+  },
+  {
+    path: 'drag-handle',
+    component: DragHandleComponent,
   },
 ];
 

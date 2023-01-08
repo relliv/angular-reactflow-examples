@@ -8,9 +8,10 @@ import { ReactComponentDirective } from './react-component.directive';
 import { FeatureOverflowComponent } from './feature-overflow/feature-overflow.component';
 import { ProximityConnectComponent } from './proximity-connect/proximity-connect.component';
 import { FloatingEdgesComponent } from './floating-edges/floating-edges.component';
+import { DragHandleComponent } from './drag-handle/drag-handle.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent, ProximityConnectComponent, FloatingEdgesComponent],
+  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent, ProximityConnectComponent, FloatingEdgesComponent, DragHandleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
