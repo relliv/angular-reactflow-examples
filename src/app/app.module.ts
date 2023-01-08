@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ReactComponentDirective } from './react-component.directive';
 import { FeatureOverflowComponent } from './feature-overflow/feature-overflow.component';
+import { ProximityConnectComponent } from './proximity-connect/proximity-connect.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent],
+  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent, ProximityConnectComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -59,3 +59,13 @@
   margin-top: 5px;
   font-size: 10px;
 }
+
+.react-flow__edge-path {
+  stroke: #333;
+  stroke-width: 2;
+}
+
+.temp .react-flow__edge-path {
+  stroke: #bbb;
+  stroke-dasharray: 5 5;
+}

@@ -18,7 +18,7 @@ export class ReactComponentDirective<Comp extends ElementType> {
       createElement(
         this.reactComponent,
         this.props,
-        this.children.map((child: any) =>
+        this.children?.map((child: any) =>
           createElement(child as React.FC<any>, {
             key: child.name,
             ...child.props,
