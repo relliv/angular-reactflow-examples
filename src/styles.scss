@@ -5,3 +5,13 @@
 @import '@reactflow/minimap/dist/style.css';
 
 @import './react-styles.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+.react-flow-container {
+  height: calc(100vh - 90px);
+  width: 100%;
+}
