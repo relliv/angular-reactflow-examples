@@ -1,18 +1,24 @@
-import { useCallback, useState } from 'react';
-import ReactFlow, { addEdge, applyEdgeChanges, applyNodeChanges, Background } from 'reactflow';
-import { nodes as initialNodes, edges as initialEdges } from "./CustomNode";
-import React from 'react';
+import { useCallback, useState } from "react";
+import ReactFlow, {
+  addEdge,
+  applyEdgeChanges,
+  applyNodeChanges,
+  Background,
+} from "reactflow";
+import React from "react";
 
 const rfStyle = {
-  backgroundColor: 'orange',
+  backgroundColor: "orange",
 };
 
-function Flow() {
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+function Flow(props: any) {
+  const [nodes, setNodes] = useState(props.nodes);
+  const [edges, setEdges] = useState(props.edges);
 
   const onNodesChange = useCallback(
-    (changes: any) => setNodes((nds: any) => applyNodeChanges(changes, nds)),
+    (changes: any) => {
+      setNodes((nds: any) => applyNodeChanges(changes, nds));
+    },
     [setNodes]
   );
 
@@ -22,7 +28,14 @@ function Flow() {
   );
 
   const onConnect = useCallback(
-    (connection: any) => setEdges((eds: any) => addEdge(connection, eds)),
+    (connection: any) => {
+      setEdges((eds: any) => addEdge(connection, eds));
+
+      const _event = { event, connection };
+
+      props.onNodeConnected(_event);
+      console.log("[REACT] onNodeConnected", _event);
+    },
     [setEdges]
   );
 
