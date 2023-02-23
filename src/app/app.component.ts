@@ -27,6 +27,10 @@ export class AppComponent {
       label: 'Drag Handle',
       route: '/drag-handle',
     },
+    {
+      label: 'Sub Flows',
+      route: '/sub-flows',
+    },
   ];
 
   public constructor() {}
