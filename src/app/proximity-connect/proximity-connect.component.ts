@@ -7,7 +7,8 @@ import ReactFlowProximityConnect from './_react/ReactFlowProximityConnect';
   styleUrls: ['./proximity-connect.component.scss'],
 })
 export class ProximityConnectComponent implements OnInit {
-  public ReactFlowProximityConnect: any = ReactFlowProximityConnect;
+  public ReactFlowProximityConnect: typeof ReactFlowProximityConnect =
+    ReactFlowProximityConnect;
 
   constructor() {}
 

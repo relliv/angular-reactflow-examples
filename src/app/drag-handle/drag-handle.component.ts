@@ -7,7 +7,7 @@ import ReactFlowDragHandle from './_react/ReactFlowDragHandle';
   styleUrls: ['./drag-handle.component.scss'],
 })
 export class DragHandleComponent implements OnInit {
-  public ReactFlowDragHandle: any = ReactFlowDragHandle;
+  public ReactFlowDragHandle: typeof ReactFlowDragHandle = ReactFlowDragHandle;
 
   constructor() {}
 

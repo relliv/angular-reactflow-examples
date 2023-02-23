@@ -10,9 +10,9 @@ import ReactFlowFeatureOverview from './_react/ReactFlowFeatureOverview';
   styleUrls: ['./feature-overflow.component.scss'],
 })
 export class FeatureOverflowComponent implements OnInit {
-  public ReactFlow: any = ReactFlow;
-  public Background: any = Background;
-  public Controls: any = Controls;
+  public ReactFlow: typeof ReactFlow = ReactFlow;
+  public Background: typeof Background = Background;
+  public Controls: typeof Controls = Controls;
 
   public rootId = 'root';
   private rootElement: ReactDOM.Root | null = null;

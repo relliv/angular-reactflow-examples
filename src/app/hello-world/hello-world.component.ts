@@ -15,9 +15,9 @@ import ReactFlowHelloWorld from './_react/ReactFlowHelloWorld';
   styleUrls: ['./hello-world.component.scss'],
 })
 export class HelloWorldComponent implements OnInit {
-  public ReactFlow: any = ReactFlow;
-  public Background: any = Background;
-  public Controls: any = Controls;
+  public ReactFlow: typeof ReactFlow = ReactFlow;
+  public Background: typeof Background = Background;
+  public Controls: typeof Controls = Controls;
 
   public rootId = 'root';
   private rootElement: ReactDOM.Root | null = null;

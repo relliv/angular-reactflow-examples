@@ -8,7 +8,8 @@ import ReactFlowFloatingEdges from './_react/ReactFlowFloatingEdges';
   encapsulation: ViewEncapsulation.None,
 })
 export class FloatingEdgesComponent implements OnInit {
-  public ReactFlowFloatingEdges: any = ReactFlowFloatingEdges;
+  public ReactFlowFloatingEdges: typeof ReactFlowFloatingEdges =
+    ReactFlowFloatingEdges;
 
   constructor() {}
 
