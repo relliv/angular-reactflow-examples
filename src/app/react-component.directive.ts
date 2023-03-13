@@ -1,4 +1,4 @@
-import { Directive, ElementRef, inject, Input } from '@angular/core';
+import { Directive, ElementRef, inject, Input, OnChanges } from '@angular/core';
 import { ComponentProps, createElement, ElementType } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -9,14 +9,15 @@ import { createRoot } from 'react-dom/client';
   // standalone components/directives/pipes are coming in Angular 14
   standalone: true,
 })
-export class ReactComponentDirective<Comp extends ElementType> {
+export class ReactComponentDirective<Comp extends ElementType>
+  implements OnChanges
+{
   @Input() public reactComponent: Comp;
   @Input() public props: ComponentProps<Comp>;
   @Input() public children: any;
 
   private root = createRoot(inject(ElementRef).nativeElement);
 
-  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   public ngOnChanges(): void {
     this.root.render(
       createElement(
