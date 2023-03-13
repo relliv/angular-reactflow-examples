@@ -30,3 +30,48 @@ Just pass react component and props to the `react-component` directive. The dire
   ></div>
 </div>
 ```
+
+## Example Implementation for Older Angular Versions
+
+An example implementation for older Angular versions based [react-component.directive.ts](./src/app/react-component.directive.ts) file.
+
+```ts
+import { ApplicationRef, Directive, ElementRef, inject, Injector, Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { ComponentProps, createElement, ElementType, React } from 'react';
+import { createRoot } from 'react-dom/client';
+
+@Directive({
+	// eslint-disable-next-line @angular-eslint/directive-selector
+	selector: '[reactComponent]',
+})
+export class ReactComponentDirective<Comp extends ElementType> implements OnChanges, OnDestroy {
+	@Input() public reactComponent: Comp;
+	@Input() public props: ComponentProps<Comp>;
+	@Input() public children: any;
+
+	private root: any;
+
+	constructor(private appRef: ApplicationRef, private elementRef: ElementRef) {
+		this.root = createRoot(this.elementRef.nativeElement);
+	}
+
+	public ngOnChanges(): void {
+		this.root.render(
+			createElement(
+				this.reactComponent,
+				this.props,
+				this.children?.map((child: any) =>
+					createElement(child as React.FC<any>, {
+						key: child.name,
+						...child.props,
+					})
+				)
+			)
+		);
+	}
+
+	public ngOnDestroy(): void {
+		this.root.unmount();
+	}
+}
+```
