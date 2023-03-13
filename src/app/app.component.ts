@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,11 @@ export class AppComponent {
     },
   ];
 
-  public constructor() {}
+  public constructor(private router: Router) {
+    const randomIndex = Math.floor(Math.random() * this.menuItems.length);
+
+    this.router.navigate([this.menuItems[randomIndex].route]);
+  }
 
   onNgInit() {}
 }
