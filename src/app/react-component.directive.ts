@@ -5,6 +5,8 @@ import { createRoot } from 'react-dom/client';
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[reactComponent]',
+  // https://angular.io/guide/standalone-components
+  // standalone components/directives/pipes are coming in Angular 14
   standalone: true,
 })
 export class ReactComponentDirective<Comp extends ElementType> {
