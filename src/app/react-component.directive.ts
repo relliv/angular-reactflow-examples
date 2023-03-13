@@ -1,4 +1,11 @@
-import { Directive, ElementRef, inject, Input, OnChanges } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+} from '@angular/core';
 import { ComponentProps, createElement, ElementType } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -10,7 +17,7 @@ import { createRoot } from 'react-dom/client';
   standalone: true,
 })
 export class ReactComponentDirective<Comp extends ElementType>
-  implements OnChanges
+  implements OnChanges, OnDestroy
 {
   @Input() public reactComponent: Comp;
   @Input() public props: ComponentProps<Comp>;
@@ -33,7 +40,7 @@ export class ReactComponentDirective<Comp extends ElementType>
     );
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy(): void {
     this.root.unmount();
   }
 }
