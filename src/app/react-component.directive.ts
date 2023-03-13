@@ -3,17 +3,19 @@ import { ComponentProps, createElement, ElementType } from 'react';
 import { createRoot } from 'react-dom/client';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[reactComponent]',
   standalone: true,
 })
 export class ReactComponentDirective<Comp extends ElementType> {
-  @Input() reactComponent: Comp;
-  @Input() props: ComponentProps<Comp>;
-  @Input() children: any;
+  @Input() public reactComponent: Comp;
+  @Input() public props: ComponentProps<Comp>;
+  @Input() public children: any;
 
   private root = createRoot(inject(ElementRef).nativeElement);
 
-  ngOnChanges() {
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
+  public ngOnChanges(): void {
     this.root.render(
       createElement(
         this.reactComponent,
