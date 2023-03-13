@@ -6,6 +6,8 @@ This project demonstrates how to use [React](https://facebook.github.io/react/) 
 
 The [react-component](./src/app/react-component.directive.ts) directive allows you to use React components in Angular templates. Logic is handled in the React component, while the Angular template is used to pass data to the React component.
 
+> Warning: This directive is a standalone directive. If you want to use it in your project, you need to modify the code to fit your needs.
+
 ## Import Reactflow styles
 
 ```scss
