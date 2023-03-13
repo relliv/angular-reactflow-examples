@@ -1,29 +1,30 @@
 # AngularFlow
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+This project demonstrates how to use [React](https://facebook.github.io/react/) and [Reactflow](https://reactflow.dev/) with [Angular](https://angular.io/). These examples are compatible with Angular 14+ and React 17+. The examples are based on the [Reactflow examples](https://reactflow.dev/examples/).
 
-[ReactFlow](https://reactflow.dev/) is a library for building interactive node-based UIs, editors, flow charts, diagrams, forms, etc. It is based on [React](https://reactjs.org/) as an Angular developer I wanted to use it in my Angular project. So I created Angular wrapper examples for ReactFlow.
+## React Component Directive
 
-## Development server
+The [react-component](./src/app/react-component.directive.ts) directive allows you to use React components in Angular templates. Logic is handled in the React component, while the Angular template is used to pass data to the React component.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Import Reactflow styles
 
-## Code scaffolding
+```scss
+@import '@reactflow/core/dist/style.css';
+@import '@reactflow/controls/dist/style.css';
+@import '@reactflow/minimap/dist/style.css';
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## React Component Wrapper
 
-## Build
+Just pass react component and props to the `react-component` directive. The directive will create a wrapper component that will render the react component.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+<div id="root">
+  <div
+    [reactComponent]="ReactFlowSubFlows"
+    (onEvent)="onEvent($event)"
+    [props]="props"
+    class="react-flow-container"
+  ></div>
+</div>
+```
