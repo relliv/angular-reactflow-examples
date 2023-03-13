@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { timer } from 'rxjs';
 import {
   nodes as initialNodes,
   edges as initialEdges,
