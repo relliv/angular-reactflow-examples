@@ -10,9 +10,10 @@ import { ProximityConnectComponent } from './proximity-connect/proximity-connect
 import { FloatingEdgesComponent } from './floating-edges/floating-edges.component';
 import { DragHandleComponent } from './drag-handle/drag-handle.component';
 import { SubFlowsComponent } from './sub-flows/sub-flows.component';
+import { TurboFlowComponent } from './turbo-flow/turbo-flow.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent, ProximityConnectComponent, FloatingEdgesComponent, DragHandleComponent, SubFlowsComponent],
+  declarations: [AppComponent, HelloWorldComponent, FeatureOverflowComponent, ProximityConnectComponent, FloatingEdgesComponent, DragHandleComponent, SubFlowsComponent, TurboFlowComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

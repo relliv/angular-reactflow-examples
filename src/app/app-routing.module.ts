@@ -6,6 +6,7 @@ import { ProximityConnectComponent } from './proximity-connect/proximity-connect
 import { FloatingEdgesComponent } from './floating-edges/floating-edges.component';
 import { DragHandleComponent } from './drag-handle/drag-handle.component';
 import { SubFlowsComponent } from './sub-flows/sub-flows.component';
+import { TurboFlowComponent } from './turbo-flow/turbo-flow.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'sub-flows',
     component: SubFlowsComponent,
+  },
+  {
+    path: 'turbo-flow',
+    component: TurboFlowComponent,
   },
 ];
 

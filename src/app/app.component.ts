@@ -32,6 +32,10 @@ export class AppComponent {
       label: 'Sub Flows',
       route: '/sub-flows',
     },
+    {
+      label: 'Turbo Flow',
+      route: '/turbo-flow',
+    },
   ];
 
   public constructor(private router: Router) {
