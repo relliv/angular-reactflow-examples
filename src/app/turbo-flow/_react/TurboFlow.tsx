@@ -9,6 +9,8 @@ import ReactFlow, {
 } from "reactflow";
 import { FiFile } from "react-icons/fi";
 
+import "reactflow/dist/base.css";
+import "./index.css";
 import TurboNode, { TurboNodeData } from "./TurboNode";
 import TurboEdge from "./TurboEdge";
 import FunctionIcon from "./FunctionIcon";
