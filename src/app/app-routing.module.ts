@@ -7,6 +7,7 @@ import { FloatingEdgesComponent } from './floating-edges/floating-edges.componen
 import { DragHandleComponent } from './drag-handle/drag-handle.component';
 import { SubFlowsComponent } from './sub-flows/sub-flows.component';
 import { TurboFlowComponent } from './turbo-flow/turbo-flow.component';
+import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edge-on-drop.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'turbo-flow',
     component: TurboFlowComponent,
+  },
+  {
+    path: 'add-node-edge-on-drop',
+    component: AddNodeEdgeOnDropComponent,
   },
 ];
 

@@ -36,6 +36,10 @@ export class AppComponent {
       label: 'Turbo Flow',
       route: '/turbo-flow',
     },
+    {
+      label: 'Add Node Edge on Drop',
+      route: '/add-node-edge-on-drop',
+    },
   ];
 
   public constructor(private router: Router) {
