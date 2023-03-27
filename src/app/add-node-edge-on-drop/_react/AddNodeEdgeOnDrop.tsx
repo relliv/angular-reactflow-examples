@@ -1,39 +1,80 @@
-// @source: https://reactflow.dev/docs/examples/nodes/drag-handle/
+import React, { useCallback, useRef } from "react";
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  useReactFlow,
+  ReactFlowProvider,
+} from "reactflow";
 
-import React from "react";
-import ReactFlow, { useNodesState, useEdgesState, Background } from "reactflow";
-
-import DragHandleNode from "./DragHandleNode";
-
-const nodeTypes = {
-  dragHandleNode: DragHandleNode,
-};
-
-const initialNodes: any = [
+const initialNodes = [
   {
-    id: "2",
-    type: "dragHandleNode",
-    dragHandle: ".custom-drag-handle",
-    style: { border: "1px solid #ddd", padding: "20px 40px" },
-    position: { x: 200, y: 200 },
+    id: "0",
+    type: "input",
+    data: { label: "Node" },
+    position: { x: 0, y: 50 },
   },
 ];
 
-const DragHandleFlow = () => {
+let id = 1;
+const getId = () => `${id++}`;
+
+const fitViewOptions = {
+  padding: 3,
+};
+
+const AddNodeOnEdgeDrop = () => {
+  const reactFlowWrapper: any = useRef(null);
+  const connectingNodeId = useRef(null);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const { project } = useReactFlow();
+  const onConnect = useCallback(
+    (params: any) => setEdges((eds) => addEdge(params, eds)),
+    []
+  );
+
+  const onConnectStart = useCallback((_: any, { nodeId }: any) => {
+    connectingNodeId.current = nodeId;
+  }, []);
+
+  const onConnectEnd = useCallback(
+    (event: any) => {
+      const targetIsPane = event.target.classList.contains("react-flow__pane");
+
+      if (targetIsPane) {
+        // we need to remove the wrapper bounds, in order to get the correct position
+        const { top, left } =
+          reactFlowWrapper?.current?.getBoundingClientRect();
+        const id = getId();
+        const newNode = {
+          id,
+          // we are removing the half of the node width (75) to center the new node
+          position: project({
+            x: event.clientX - left - 75,
+            y: event.clientY - top,
+          }),
+          data: { label: `Node ${id}` },
+        };
+
+        setNodes((nds) => nds.concat(newNode));
+        setEdges((eds: any) =>
+          eds.concat({ id, source: connectingNodeId.current, target: id })
+        );
+      }
+    },
+    [project]
+  );
 
   return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      nodeTypes={nodeTypes}
-    >
-      <Background />
-    </ReactFlow>
+    <div className="wrapper" ref={reactFlowWrapper}>
+      <ReactFlow nodes={nodes} edges={edges} />
+    </div>
   );
 };
 
-export default DragHandleFlow;
+export default () => (
+  <ReactFlowProvider>
+    <AddNodeOnEdgeDrop />
+  </ReactFlowProvider>
+);
