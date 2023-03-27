@@ -68,7 +68,17 @@ const AddNodeOnEdgeDrop = () => {
 
   return (
     <div className="wrapper" ref={reactFlowWrapper}>
-      <ReactFlow nodes={nodes} edges={edges} />
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        onConnectStart={onConnectStart}
+        onConnectEnd={onConnectEnd}
+        fitView
+        fitViewOptions={fitViewOptions}
+      />
     </div>
   );
 };
