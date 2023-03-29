@@ -12,6 +12,7 @@ import { DragHandleComponent } from './drag-handle/drag-handle.component';
 import { SubFlowsComponent } from './sub-flows/sub-flows.component';
 import { TurboFlowComponent } from './turbo-flow/turbo-flow.component';
 import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edge-on-drop.component';
+import { NodeToolbarsComponent } from './node-toolbars/node-toolbars.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edg
     SubFlowsComponent,
     TurboFlowComponent,
     AddNodeEdgeOnDropComponent,
+    NodeToolbarsComponent,
   ],
   imports: [
     BrowserModule,

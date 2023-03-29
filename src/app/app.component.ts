@@ -40,6 +40,10 @@ export class AppComponent {
       label: 'Add Node Edge on Drop',
       route: '/add-node-edge-on-drop',
     },
+    {
+      label: 'Node Toolbars',
+      route: '/node-toolbars',
+    },
   ];
 
   public constructor(private router: Router) {
