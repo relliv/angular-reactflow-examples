@@ -22,58 +22,80 @@ const defaultNodeStyle = {
   borderRadius: 20,
 };
 
-const initialNodes = [
-  {
-    id: "1",
-    type: "custom",
-    data: { label: "toolbar top", toolbarPosition: Position.Top },
-    position: { x: 200, y: 0 },
-    style: defaultNodeStyle,
-  },
-  {
-    id: "2",
-    type: "custom",
-    data: { label: "toolbar right", toolbarPosition: Position.Right },
-    position: { x: -50, y: 100 },
-    style: defaultNodeStyle,
-  },
-  {
-    id: "3",
-    type: "custom",
-    data: { label: "toolbar bottom", toolbarPosition: Position.Bottom },
-    position: { x: 0, y: 200 },
-    style: defaultNodeStyle,
-  },
-  {
-    id: "4",
-    type: "custom",
-    data: { label: "toolbar left", toolbarPosition: Position.Left },
-    position: { x: 200, y: 300 },
-    style: defaultNodeStyle,
-  },
-  {
-    id: "5",
-    type: "tooltip",
-    data: { label: "hover tooltip", toolbarPosition: Position.Left },
-    position: { x: 100, y: 400 },
-    style: defaultNodeStyle,
-  },
-  {
-    id: "6",
-    type: "custom",
-    data: {
-      label: "toolbar always open",
-      toolbarPosition: Position.Top,
-      toolbarVisible: true,
+export default function NodeToolbarExample(props: any) {
+  console.log("NodeToolbarExample", props);
+  const initialNodes = [
+    {
+      id: "1",
+      type: "custom",
+      data: {
+        label: "toolbar top",
+        toolbarPosition: Position.Top,
+        onTooltipClicked: (event: any) => props.onTooltipClicked(event),
+      },
+      position: { x: 200, y: 0 },
+      style: defaultNodeStyle,
     },
-    position: { x: 0, y: -100 },
-    style: defaultNodeStyle,
-  },
-];
+    {
+      id: "2",
+      type: "custom",
+      data: {
+        label: "toolbar right",
+        toolbarPosition: Position.Right,
+        onTooltipClicked: (event: any) => props.onTooltipClicked(event),
+      },
+      position: { x: -50, y: 100 },
+      style: defaultNodeStyle,
+    },
+    {
+      id: "3",
+      type: "custom",
+      data: {
+        label: "toolbar bottom",
+        toolbarPosition: Position.Bottom,
+        onTooltipClicked: (event: any) => props.onTooltipClicked(event),
+      },
+      position: { x: 0, y: 200 },
+      style: defaultNodeStyle,
+    },
+    {
+      id: "4",
+      type: "custom",
+      data: {
+        label: "toolbar left",
+        toolbarPosition: Position.Left,
+        onTooltipClicked: (event: any) => props.onTooltipClicked(event),
+      },
+      position: { x: 200, y: 300 },
+      style: defaultNodeStyle,
+    },
+    {
+      id: "5",
+      type: "tooltip",
+      data: {
+        label: "hover tooltip",
+        toolbarPosition: Position.Left,
+        onTooltipClicked: (event: any) => props.onTooltipClicked(event),
+      },
+      position: { x: 100, y: 400 },
+      style: defaultNodeStyle,
+    },
+    {
+      id: "6",
+      type: "custom",
+      data: {
+        label: "toolbar always open",
+        toolbarPosition: Position.Top,
+        toolbarVisible: true,
+      },
+      onTooltipClicked: (event: any) => props.onTooltipClicked(event),
+      position: { x: 0, y: -100 },
+      style: defaultNodeStyle,
+    },
+  ];
 
-const initialEdges: any[] = [];
+  const initialEdges: any[] = [];
 
-export default function NodeToolbarExample() {
   return (
     <ReactFlow
       defaultNodes={initialNodes}

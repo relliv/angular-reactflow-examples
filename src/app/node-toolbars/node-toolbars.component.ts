@@ -9,18 +9,18 @@ import NodeToolbars from './_react/NodeToolbars';
 export class NodeToolbarsComponent implements OnInit {
   public NodeToolbars: typeof NodeToolbars = NodeToolbars;
   public props: any = {
-    onNodeConnected: this.onNodeConnected,
+    onTooltipClicked: (event: any) => this.onTooltipClicked(event),
   };
   public nodeConnected = new EventEmitter<void>();
 
   constructor() {
-    this.onNodeConnected = this.onNodeConnected.bind(this);
+    this.onTooltipClicked = this.onTooltipClicked.bind(this);
   }
 
   ngOnInit(): void {}
 
-  public onNodeConnected(event: any) {
-    console.log('[NG] onNodeConnected', event);
+  public onTooltipClicked(event: any) {
+    console.log('[NG] onTooltipClicked', event);
 
     if (this.nodeConnected) {
       this.nodeConnected.emit();
