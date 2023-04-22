@@ -48,6 +48,10 @@ export class AppComponent {
       label: 'Dagre Tree',
       route: '/dagre-tree',
     },
+    {
+      label: 'Custom Dagre Tree',
+      route: '/custom-dagre-tree',
+    },
   ];
 
   public constructor(private router: Router) {

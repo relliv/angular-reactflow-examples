@@ -14,6 +14,7 @@ import { TurboFlowComponent } from './turbo-flow/turbo-flow.component';
 import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edge-on-drop.component';
 import { NodeToolbarsComponent } from './node-toolbars/node-toolbars.component';
 import { DagreTreeComponent } from './dagre-tree/dagre-tree.component';
+import { CustomDagreTreeComponent } from './custom-dagre-tree/custom-dagre-tree.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DagreTreeComponent } from './dagre-tree/dagre-tree.component';
     AddNodeEdgeOnDropComponent,
     NodeToolbarsComponent,
     DagreTreeComponent,
+    CustomDagreTreeComponent,
   ],
   imports: [
     BrowserModule,
