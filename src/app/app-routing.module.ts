@@ -9,6 +9,7 @@ import { SubFlowsComponent } from './sub-flows/sub-flows.component';
 import { TurboFlowComponent } from './turbo-flow/turbo-flow.component';
 import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edge-on-drop.component';
 import { NodeToolbarsComponent } from './node-toolbars/node-toolbars.component';
+import { DagreTreeComponent } from './dagre-tree/dagre-tree.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'node-toolbars',
     component: NodeToolbarsComponent,
+  },
+  {
+    path: 'dagre-tree',
+    component: DagreTreeComponent,
   },
 ];
 

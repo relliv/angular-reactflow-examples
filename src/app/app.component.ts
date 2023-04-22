@@ -44,6 +44,10 @@ export class AppComponent {
       label: 'Node Toolbars',
       route: '/node-toolbars',
     },
+    {
+      label: 'Dagre Tree',
+      route: '/dagre-tree',
+    },
   ];
 
   public constructor(private router: Router) {
