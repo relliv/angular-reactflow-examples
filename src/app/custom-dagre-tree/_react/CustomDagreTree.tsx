@@ -11,12 +11,10 @@ import dagre from "dagre";
 import * as R from "ramda";
 import Node, { contentStyle as style } from "./Node";
 
-const isValidInput = (connection: any) => {
-  return R.last(R.split("__", connection.source)) === "data";
-};
-const isValidOutput = (connection: any) => {
-  return R.last(R.split("__", connection.target)) === "data";
-};
+const isValidInput = (connection: any): any =>
+  R.last(R.split("__", connection.source)) === "data";
+const isValidOutput = (connection: any): any =>
+  R.last(R.split("__", connection.target)) === "data";
 
 import { initialNodes, initialEdges } from "./NodeEdges";
 
