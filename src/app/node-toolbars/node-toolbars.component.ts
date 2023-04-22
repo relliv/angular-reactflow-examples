@@ -22,6 +22,8 @@ export class NodeToolbarsComponent implements OnInit {
   public onTooltipClicked(event: any) {
     console.log('[NG] onTooltipClicked', event);
 
+    alert('onTooltipClicked and handled by Angular');
+
     if (this.nodeConnected) {
       this.nodeConnected.emit();
     }
