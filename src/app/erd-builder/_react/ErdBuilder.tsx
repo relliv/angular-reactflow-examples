@@ -50,12 +50,14 @@ const CustomNodeFlow = () => {
         data: { label: "An input node" },
         position: { x: -50, y: -100 },
         sourcePosition: Position.Right,
+        dragHandle: ".header",
       },
       {
         id: "2",
         type: "selectorNode",
         data: { onChange: onChange, color: initBgColor },
         position: { x: 300, y: 50 },
+        dragHandle: ".header",
       },
       {
         id: "3",
@@ -63,6 +65,7 @@ const CustomNodeFlow = () => {
         data: { label: "Output A" },
         position: { x: 650, y: 0 },
         targetPosition: Position.Left,
+        dragHandle: ".header",
       },
       {
         id: "4",
@@ -70,6 +73,7 @@ const CustomNodeFlow = () => {
         data: { label: "Output B" },
         position: { x: 650, y: 350 },
         targetPosition: Position.Left,
+        dragHandle: ".header",
       },
     ]);
 
