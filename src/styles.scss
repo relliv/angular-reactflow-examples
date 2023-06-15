@@ -1,17 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '@reactflow/core/dist/style.css';
-@import '@reactflow/controls/dist/style.css';
-@import '@reactflow/minimap/dist/style.css';
+@import "@reactflow/core/dist/style.css";
+@import "@reactflow/controls/dist/style.css";
+@import "@reactflow/minimap/dist/style.css";
 
-@import './react-styles.scss';
+@import "./react-styles.scss";
+@import "./assets/styles/erd-builder/index.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
 
 html,
 body {
   height: 100%;
-  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .react-flow-container {

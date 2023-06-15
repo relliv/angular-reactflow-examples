@@ -3,7 +3,7 @@ import { Handle, Position } from "reactflow";
 
 export default memo(({ data, isConnectable }: any) => {
   return (
-    <>
+    <div className="erd-entity">
       <Handle
         type="target"
         position={Position.Left}
@@ -32,6 +32,6 @@ export default memo(({ data, isConnectable }: any) => {
           isConnectable={isConnectable}
         />
       </div>
-    </>
+    </div>
   );
 });
