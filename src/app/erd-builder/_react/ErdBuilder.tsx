@@ -121,7 +121,13 @@ const CustomNodeFlow = () => {
       fitView
       attributionPosition="bottom-left"
     >
-      <MiniMap />
+      <MiniMap
+        style={{
+          height: 120,
+        }}
+        zoomable
+        pannable
+      />
       <Controls />
     </ReactFlow>
   );
