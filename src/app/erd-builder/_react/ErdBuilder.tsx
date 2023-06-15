@@ -45,9 +45,9 @@ const CustomNodeFlow = () => {
     setNodes([
       {
         id: "1",
-        type: "input",
+        type: "selectorNode",
         data: { label: "An input node" },
-        position: { x: 0, y: 50 },
+        position: { x: -50, y: -100 },
         sourcePosition: Position.Right,
       },
       {
@@ -58,16 +58,16 @@ const CustomNodeFlow = () => {
       },
       {
         id: "3",
-        type: "output",
+        type: "selectorNode",
         data: { label: "Output A" },
-        position: { x: 650, y: 25 },
+        position: { x: 650, y: 0 },
         targetPosition: Position.Left,
       },
       {
         id: "4",
-        type: "output",
+        type: "selectorNode",
         data: { label: "Output B" },
-        position: { x: 650, y: 100 },
+        position: { x: 650, y: 350 },
         targetPosition: Position.Left,
       },
     ]);
