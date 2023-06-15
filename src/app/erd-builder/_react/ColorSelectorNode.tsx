@@ -49,7 +49,7 @@ export default memo(({ data, isConnectable }: any) => {
       {/* Body */}
       <div className="body">
         {fields.map((field, index) => (
-          <div className="field">
+          <div className="field" key={index}>
             {/* Left Handle */}
             <Handle
               type="target"
