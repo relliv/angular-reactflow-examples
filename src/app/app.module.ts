@@ -15,6 +15,7 @@ import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edg
 import { NodeToolbarsComponent } from './node-toolbars/node-toolbars.component';
 import { DagreTreeComponent } from './dagre-tree/dagre-tree.component';
 import { CustomDagreTreeComponent } from './custom-dagre-tree/custom-dagre-tree.component';
+import { ErdBuilderComponent } from './erd-builder/erd-builder.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CustomDagreTreeComponent } from './custom-dagre-tree/custom-dagre-tree.
     NodeToolbarsComponent,
     DagreTreeComponent,
     CustomDagreTreeComponent,
+    ErdBuilderComponent,
   ],
   imports: [
     BrowserModule,

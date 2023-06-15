@@ -115,6 +115,8 @@ export const nodes: any = [
       selects: {
         "handle-0": "smoothstep",
         "handle-1": "smoothstep",
+        "handle-2": "smoothstep",
+        "handle-3": "smoothstep",
       },
     },
   },

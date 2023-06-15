@@ -11,6 +11,7 @@ import { AddNodeEdgeOnDropComponent } from './add-node-edge-on-drop/add-node-edg
 import { NodeToolbarsComponent } from './node-toolbars/node-toolbars.component';
 import { DagreTreeComponent } from './dagre-tree/dagre-tree.component';
 import { CustomDagreTreeComponent } from './custom-dagre-tree/custom-dagre-tree.component';
+import { ErdBuilderComponent } from './erd-builder/erd-builder.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'custom-dagre-tree',
     component: CustomDagreTreeComponent,
+  },
+  {
+    path: 'erd-builder',
+    component: ErdBuilderComponent,
   },
 ];
 

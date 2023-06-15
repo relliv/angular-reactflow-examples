@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   public menuItems: any[] = [
     {
+      label: 'ERD Builder',
+      route: '/erd-builder',
+    },
+    {
       label: 'Hello World',
       route: '/hello-world',
     },
@@ -55,9 +59,8 @@ export class AppComponent {
   ];
 
   public constructor(private router: Router) {
-    const randomIndex = Math.floor(Math.random() * this.menuItems.length);
-
-    this.router.navigate([this.menuItems[randomIndex].route]);
+    // const randomIndex = Math.floor(Math.random() * this.menuItems.length);
+    // this.router.navigate([this.menuItems[randomIndex].route]);
   }
 
   onNgInit() {}
