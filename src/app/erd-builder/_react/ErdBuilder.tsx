@@ -10,8 +10,7 @@ import ReactFlow, {
 import ColorSelectorNode from "./ColorSelectorNode";
 const initBgColor = "#1A192B";
 
-const connectionLineStyle = { stroke: "#fff" };
-const snapGrid = [20, 20];
+const connectionLineStyle = { stroke: "#000" };
 const nodeTypes = {
   selectorNode: ColorSelectorNode,
 };
@@ -21,7 +20,6 @@ const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
 const CustomNodeFlow = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-  const [bgColor, setBgColor] = useState(initBgColor);
 
   useEffect(() => {
     const onChange = (event: any) => {
@@ -32,8 +30,6 @@ const CustomNodeFlow = () => {
           }
 
           const color = event.target.value;
-
-          setBgColor(color);
 
           return {
             ...node,
@@ -82,7 +78,7 @@ const CustomNodeFlow = () => {
         source: "1",
         target: "2",
         animated: true,
-        style: { stroke: "#fff" },
+        style: { stroke: "#000" },
       },
       {
         id: "e2a-3",
@@ -90,7 +86,7 @@ const CustomNodeFlow = () => {
         target: "3",
         sourceHandle: "a",
         animated: true,
-        style: { stroke: "#fff" },
+        style: { stroke: "#000" },
       },
       {
         id: "e2b-4",
@@ -98,7 +94,7 @@ const CustomNodeFlow = () => {
         target: "4",
         sourceHandle: "b",
         animated: true,
-        style: { stroke: "#fff" },
+        style: { stroke: "#000" },
       },
     ]);
   }, []);
@@ -117,10 +113,10 @@ const CustomNodeFlow = () => {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
-      style={{ background: bgColor }}
       nodeTypes={nodeTypes}
       connectionLineStyle={connectionLineStyle}
       snapToGrid={true}
+      snapGrid={[15, 15]}
       defaultViewport={defaultViewport}
       fitView
       attributionPosition="bottom-left"

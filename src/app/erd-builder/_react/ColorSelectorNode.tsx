@@ -11,11 +11,7 @@ export default memo(({ data, isConnectable }: any) => {
         onConnect={(params) => console.log("handle onConnect", params)}
         isConnectable={isConnectable}
       />
-      <div
-        style={{
-          background: "#fff",
-        }}
-      >
+      <div>
         Custom Color Picker Node: <strong>{data.color}</strong>
         <Handle
           type="source"
