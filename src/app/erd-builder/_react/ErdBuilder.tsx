@@ -6,6 +6,7 @@ import ReactFlow, {
   MiniMap,
   Controls,
   Position,
+  Background,
 } from "reactflow";
 import ColorSelectorNode from "./ColorSelectorNode";
 const initBgColor = "#1A192B";
@@ -129,6 +130,7 @@ const CustomNodeFlow = () => {
         pannable
       />
       <Controls />
+      <Background color="#aaa" gap={16} />
     </ReactFlow>
   );
 };
