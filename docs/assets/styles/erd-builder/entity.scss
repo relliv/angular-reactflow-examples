@@ -1,0 +1,48 @@
+.erd-entity {
+  background-color: #fff;
+  border-radius: 5px;
+  min-height: 300px;
+  min-width: 250px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eeeeee;
+
+  .header {
+    background-color: #c0cc84;
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    cursor: move;
+  }
+
+  .body {
+    cursor: default;
+
+    .field {
+      padding: 10px;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 12px;
+      color: black;
+      display: flex;
+
+      .field-icon {
+        margin-right: 10px;
+      }
+
+      .field-name {
+        font-weight: bold;
+        width: 100%;
+      }
+
+      .field-type {
+        font-style: italic;
+      }
+
+      .react-flow__handle {
+        top: auto;
+        margin-top: 10px;
+      }
+    }
+  }
+}
