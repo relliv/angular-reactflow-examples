@@ -14,7 +14,7 @@ MIT
 MIT
 MIT License
 
-Copyright (c) 2019-2022 webkid GmbH
+Copyright (c) 2019-2023 webkid GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ SOFTWARE.
 MIT
 MIT License
 
-Copyright (c) 2019-2022 webkid GmbH
+Copyright (c) 2019-2023 webkid GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -64,7 +64,7 @@ SOFTWARE.
 MIT
 MIT License
 
-Copyright (c) 2019-2022 webkid GmbH
+Copyright (c) 2019-2023 webkid GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -89,7 +89,7 @@ SOFTWARE.
 MIT
 MIT License
 
-Copyright (c) 2019-2022 webkid GmbH
+Copyright (c) 2019-2023 webkid GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -114,7 +114,7 @@ SOFTWARE.
 MIT
 MIT License
 
-Copyright (c) 2019-2022 webkid GmbH
+Copyright (c) 2019-2023 webkid GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -524,6 +524,9 @@ License: MIT https://github.com/primer/octicons/blob/master/LICENSE
 Feather - https://feathericons.com/
 License: MIT https://github.com/feathericons/feather/blob/master/LICENSE
 
+Lucide - https://lucide.dev/
+License: ISC https://github.com/lucide-icons/lucide/blob/main/LICENSE
+
 Game Icons - https://game-icons.net/
 License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
 
@@ -812,21 +815,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-tslib
-0BSD
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
 
 use-sync-external-store
 MIT
