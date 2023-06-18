@@ -8,13 +8,18 @@ import ReactFlow, {
   Position,
   Background,
   ConnectionLineType,
+  EdgeTypes,
 } from "reactflow";
 import ColorSelectorNode from "./ColorSelectorNode";
+import CustomEdge from "./CustomEdge";
 const initBgColor = "#1A192B";
 
 const connectionLineStyle = { stroke: "#000" };
 const nodeTypes = {
   selectorNode: ColorSelectorNode,
+};
+const edgeTypes: EdgeTypes = {
+  custom: CustomEdge,
 };
 
 const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
@@ -81,16 +86,19 @@ const CustomNodeFlow = () => {
     setEdges([
       {
         id: "e1-2",
-        type: ConnectionLineType.Step,
+        type: "custom",
         source: "1",
         target: "2",
         animated: false,
         markerEnd: "logo",
         style: { stroke: "#000" },
+        data: {
+          label: "n:n",
+        },
       },
       {
         id: "e2a-3",
-        type: ConnectionLineType.Step,
+        type: ConnectionLineType.SmoothStep,
         source: "2",
         target: "3",
         sourceHandle: "1",
@@ -100,7 +108,7 @@ const CustomNodeFlow = () => {
       },
       {
         id: "e2b-4",
-        type: ConnectionLineType.Step,
+        type: ConnectionLineType.SmoothStep,
         source: "2",
         target: "4",
         sourceHandle: "2",
@@ -177,6 +185,7 @@ const CustomNodeFlow = () => {
         snapToGrid={true}
         snapGrid={[15, 15]}
         defaultViewport={defaultViewport}
+        edgeTypes={edgeTypes}
         fitView
         attributionPosition="bottom-left"
       >
