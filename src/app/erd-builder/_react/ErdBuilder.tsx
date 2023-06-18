@@ -80,6 +80,7 @@ const CustomNodeFlow = () => {
     setEdges([
       {
         id: "e1-2",
+        type: "step",
         source: "1",
         target: "2",
         animated: false,
@@ -87,6 +88,7 @@ const CustomNodeFlow = () => {
       },
       {
         id: "e2a-3",
+        type: "step",
         source: "2",
         target: "3",
         sourceHandle: "1",
@@ -95,6 +97,7 @@ const CustomNodeFlow = () => {
       },
       {
         id: "e2b-4",
+        type: "step",
         source: "2",
         target: "4",
         sourceHandle: "2",
@@ -107,7 +110,15 @@ const CustomNodeFlow = () => {
   const onConnect = useCallback(
     (params: any) =>
       setEdges((eds) =>
-        addEdge({ ...params, animated: false, style: { stroke: "#fff" } }, eds)
+        addEdge(
+          {
+            ...params,
+            type: "step",
+            animated: false,
+            style: { stroke: "#fff" },
+          },
+          eds
+        )
       ),
     []
   );
