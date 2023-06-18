@@ -84,6 +84,7 @@ const CustomNodeFlow = () => {
         source: "1",
         target: "2",
         animated: false,
+        markerEnd: "logo",
         style: { stroke: "#000" },
       },
       {
@@ -93,6 +94,7 @@ const CustomNodeFlow = () => {
         target: "3",
         sourceHandle: "1",
         animated: false,
+        markerEnd: "oneOnlyOne",
         style: { stroke: "#000" },
       },
       {
@@ -102,6 +104,7 @@ const CustomNodeFlow = () => {
         target: "4",
         sourceHandle: "2",
         animated: false,
+        markerEnd: "oneOrMany",
         style: { stroke: "#000" },
       },
     ]);
@@ -115,7 +118,7 @@ const CustomNodeFlow = () => {
             ...params,
             type: "step",
             animated: false,
-            style: { stroke: "#fff" },
+            style: { strokeWidth: 1, stroke: "#fff" },
           },
           eds
         )
@@ -123,30 +126,78 @@ const CustomNodeFlow = () => {
     []
   );
   return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onConnect={onConnect}
-      nodeTypes={nodeTypes}
-      connectionLineStyle={connectionLineStyle}
-      snapToGrid={true}
-      snapGrid={[15, 15]}
-      defaultViewport={defaultViewport}
-      fitView
-      attributionPosition="bottom-left"
-    >
-      <MiniMap
-        style={{
-          height: 120,
-        }}
-        zoomable
-        pannable
-      />
-      <Controls />
-      <Background color="#aaa" gap={16} />
-    </ReactFlow>
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        fill="transparent"
+        stroke="black"
+        stroke-width="4"
+        width="24"
+        height="24"
+        viewBox="0 0 100 100"
+      >
+        <marker
+          id="oneOnlyOne"
+          viewBox="0 0 100 100"
+          markerHeight={20}
+          markerWidth={20}
+          refX={80}
+          refY={50}
+        >
+          <path d="M0 50 L100 50 M25 25 L 25 75 M75 25 L75 75" />
+        </marker>
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        fill="transparent"
+        stroke="black"
+        stroke-width="4"
+        width="24"
+        height="24"
+        viewBox="0 0 100 100"
+      >
+        <marker
+          id="oneOrMany"
+          viewBox="0 0 100 100"
+          markerHeight={20}
+          markerWidth={20}
+          refX={80}
+          refY={50}
+        >
+          <path d="M100 50 L0 50 M50 50 L 100 25 M50 50 L100 75 M25 25 L25 75" />
+        </marker>
+      </svg>
+
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        connectionLineStyle={connectionLineStyle}
+        snapToGrid={true}
+        snapGrid={[15, 15]}
+        defaultViewport={defaultViewport}
+        fitView
+        attributionPosition="bottom-left"
+      >
+        <MiniMap
+          style={{
+            height: 120,
+          }}
+          zoomable
+          pannable
+        />
+        <Controls />
+        <Background color="#aaa" gap={16} />
+      </ReactFlow>
+    </>
   );
 };
 
