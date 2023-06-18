@@ -61,6 +61,7 @@ export class AppComponent {
   public constructor(private router: Router) {
     // const randomIndex = Math.floor(Math.random() * this.menuItems.length);
     // this.router.navigate([this.menuItems[randomIndex].route]);
+    this.router.navigate([this.menuItems[0].route]);
   }
 
   onNgInit() {}
