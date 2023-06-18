@@ -52,6 +52,7 @@ export default memo(({ data, isConnectable }: any) => {
           <div className="field" key={index}>
             {/* Left Handle */}
             <Handle
+              id={field.id}
               type="target"
               position={Position.Left}
               style={{ background: "#555" }}

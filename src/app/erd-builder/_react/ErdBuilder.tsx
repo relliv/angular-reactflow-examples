@@ -7,6 +7,7 @@ import ReactFlow, {
   Controls,
   Position,
   Background,
+  ConnectionLineType,
 } from "reactflow";
 import ColorSelectorNode from "./ColorSelectorNode";
 const initBgColor = "#1A192B";
@@ -80,7 +81,7 @@ const CustomNodeFlow = () => {
     setEdges([
       {
         id: "e1-2",
-        type: "step",
+        type: ConnectionLineType.Step,
         source: "1",
         target: "2",
         animated: false,
@@ -89,7 +90,7 @@ const CustomNodeFlow = () => {
       },
       {
         id: "e2a-3",
-        type: "step",
+        type: ConnectionLineType.Step,
         source: "2",
         target: "3",
         sourceHandle: "1",
@@ -99,7 +100,7 @@ const CustomNodeFlow = () => {
       },
       {
         id: "e2b-4",
-        type: "step",
+        type: ConnectionLineType.Step,
         source: "2",
         target: "4",
         sourceHandle: "2",
@@ -112,16 +113,8 @@ const CustomNodeFlow = () => {
 
   const onConnect = useCallback(
     (params: any) =>
-      setEdges((eds) =>
-        addEdge(
-          {
-            ...params,
-            type: "step",
-            animated: false,
-            style: { strokeWidth: 1, stroke: "#fff" },
-          },
-          eds
-        )
+      setEdges((eds: any) =>
+        addEdge({ ...params, type: ConnectionLineType.Step }, eds)
       ),
     []
   );
@@ -133,7 +126,7 @@ const CustomNodeFlow = () => {
         version="1.1"
         fill="transparent"
         stroke="black"
-        stroke-width="4"
+        strokeWidth="4"
         width="24"
         height="24"
         viewBox="0 0 100 100"
@@ -156,7 +149,7 @@ const CustomNodeFlow = () => {
         version="1.1"
         fill="transparent"
         stroke="black"
-        stroke-width="4"
+        strokeWidth="4"
         width="24"
         height="24"
         viewBox="0 0 100 100"
