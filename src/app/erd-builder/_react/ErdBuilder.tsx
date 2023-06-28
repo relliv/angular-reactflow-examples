@@ -9,6 +9,7 @@ import ReactFlow, {
   Background,
   ConnectionLineType,
   EdgeTypes,
+  Edge,
 } from "reactflow";
 import ColorSelectorNode from "./ColorSelectorNode";
 import CustomEdge from "./CustomEdge";
@@ -188,6 +189,40 @@ const CustomNodeFlow = () => {
         edgeTypes={edgeTypes}
         fitView
         attributionPosition="bottom-left"
+        onEdgeMouseEnter={(event: React.MouseEvent, edge: Edge) => {
+          console.log("onEdgeMouseEnter", edge);
+
+          // update edge color style
+          setEdges((eds: any) =>
+            eds.map((ed: any) => {
+              if (ed.id !== edge.id) {
+                return ed;
+              }
+
+              return {
+                ...ed,
+                style: { stroke: "green" },
+              };
+            })
+          );
+        }}
+        onEdgeMouseLeave={(event: React.MouseEvent, edge: Edge) => {
+          console.log("onEdgeMouseEnter", edge);
+
+          // update edge color style
+          setEdges((eds: any) =>
+            eds.map((ed: any) => {
+              if (ed.id !== edge.id) {
+                return ed;
+              }
+
+              return {
+                ...ed,
+                style: { stroke: "black" },
+              };
+            })
+          );
+        }}
       >
         <MiniMap
           style={{

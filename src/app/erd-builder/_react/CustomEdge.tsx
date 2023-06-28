@@ -14,6 +14,7 @@ const CustomEdge: FC<EdgeProps> = ({
   sourcePosition,
   targetPosition,
   data,
+  style,
 }) => {
   const [edgePath, labelX, labelY] = getSmoothStepPath({
     sourceX,
@@ -26,7 +27,8 @@ const CustomEdge: FC<EdgeProps> = ({
 
   return (
     <>
-      <BaseEdge path={edgePath} />
+      <BaseEdge path={edgePath} interactionWidth={50} style={style} />
+
       <EdgeLabelRenderer>
         <div
           style={{
