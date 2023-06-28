@@ -7,7 +7,6 @@ import {
 } from "reactflow";
 
 const CustomEdge: FC<EdgeProps> = ({
-  id,
   sourceX,
   sourceY,
   targetX,
@@ -27,7 +26,7 @@ const CustomEdge: FC<EdgeProps> = ({
 
   return (
     <>
-      <BaseEdge id={id} path={edgePath} />
+      <BaseEdge path={edgePath} />
       <EdgeLabelRenderer>
         <div
           style={{
