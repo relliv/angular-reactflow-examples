@@ -19,8 +19,8 @@ import { createRoot } from 'react-dom/client';
 export class ReactComponentDirective<Comp extends ElementType>
   implements OnChanges, OnDestroy
 {
-  @Input() public reactComponent: Comp;
-  @Input() public props: ComponentProps<Comp>;
+  @Input() public reactComponent!: Comp;
+  @Input() public props?: ComponentProps<Comp>;
   @Input() public children: any;
 
   private root = createRoot(inject(ElementRef).nativeElement);
